@@ -1,0 +1,17 @@
+<div class="page page-current tabs">
+    <nav class="bar bar-tab">
+        <a ui-sref-active="active" ui-sref="tabs.home" class="tab-item external active" href="#">
+            <span class="icon icon-home"></span>
+            <span class="tab-label">首页</span>
+        </a>
+        <a ui-sref-active="active" ui-sref="tabs.me" class="tab-item external" href="#">
+            <span class="icon icon-me"></span>
+            <span class="tab-label">我的</span>
+            <span class="badge">2</span>
+        </a>
+    </nav>
+    <div class="content">
+        <section ui-view></section>
+        <section ui-view="me"></section>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="homePage">
+    <header class="bar bar-nav">
+        <a class="icon icon-refresh pull-left open-panel" ng-click="reloadRoute()"></a>
+        <a class="icon icon-search pull-right open-panel" ui-sref="search"></a>
+        <h1 class='title'>首页</h1>
+    </header>
+    <div class="content items_content infinite-scroll" infinite-scroll data-distance="100">
+        <!-- 默认的下拉刷新层 -->
+        <!-- <div class="pull-to-refresh-layer">
+            <div class="preloader"></div>
+            <div class="pull-to-refresh-arrow"></div>
+        </div> -->
+        <div class="list_content">
+            <section class="has_action" ng-repeat="data in dataList">
+                <a class="article_link" ui-sref="detail({tid: data.tid})">
+                    <div class="item_detail">
+                        <h3 class="dotdot line3">{{data.title}}</h3>
+                        <div class="list_image">
+                            <ul class="clearfix">
+                                <li class="list_img_holder">
+                                    <div>
+                                        <img src="{{data.imglist.url1}}" alt="{{data.info.src}}">
+                                    </div>
+                                </li>
+                                <li class="list_img_holder">
+                                    <div>
+                                        <img src="{{data.imglist.url2}}" alt="{{data.info.src}}">
+                                    </div>
+                                </li>
+                                <li class="list_img_holder">
+                                    <div>
+                                        <img src="{{data.imglist.url3}}" alt="{{data.info.src}}">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="item_info">
+                            <span class="src space">{{data.info.src}}</span>
+                            <span class="cmt space">评论 <font>{{data.info.cmt}}</font></span>
+                            <span class="time">{{data.info.time}}</span>
+                        </div>
+                    </div>
+                </a>
+            </section>
+            <!-- 加载提示符 -->
+            <div class="infinite-scroll-preloader">
+                <div ng-show="hasData" class="preloader"></div>
+            </div>
+        </div>
+    </div>
+</div>

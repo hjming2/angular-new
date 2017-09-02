@@ -1,0 +1,50 @@
+<div class="page page-current searchPage">
+    <header class="bar bar-nav">
+        <a class="icon icon-left pull-left" ui-sref="tabs.home"></a>
+        <h1 class='title'>搜索栏</h1>
+    </header>
+    <div class="bar bar-header-secondary">
+        <div class="searchbar">
+            <div class="search-input">
+                <label class="icon icon-search" for="search"></label>
+                <input type="search" id='search' ng-model='kw' placeholder='输入关键字...' />
+            </div>
+            <!-- <a class="button button-fill button-primary col-20">搜索</a> -->
+        </div>
+    </div>
+    <div class="content items_content">
+        <div class="list_content">
+            <section class="has_action" ng-repeat="data in dataList | filter:kw">
+                <a class="article_link" ui-sref="detail({tid: data.tid})">
+                    <div class="item_detail">
+                        <h3 class="dotdot line3">{{data.title}}</h3>
+                        <div class="list_image">
+                            <ul class="clearfix">
+                                <li class="list_img_holder">
+                                    <div>
+                                        <img src="{{data.imglist.url1}}" alt="{{data.info.src}}">
+                                    </div>
+                                </li>
+                                <li class="list_img_holder">
+                                    <div>
+                                        <img src="{{data.imglist.url2}}" alt="{{data.info.src}}">
+                                    </div>
+                                </li>
+                                <li class="list_img_holder">
+                                    <div>
+                                        <img src="{{data.imglist.url3}}" alt="{{data.info.src}}">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="item_info">
+                            <span class="src space">{{data.info.src}}</span>
+                            <span class="cmt space">评论 <font>{{data.info.cmt}}</font></span>
+                            <span class="time">{{data.info.time}}</span>
+                        </div>
+                    </div>
+                </a>
+            </section>
+        </div>
+    </div>
+</div>

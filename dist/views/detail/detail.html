@@ -1,0 +1,49 @@
+<div class="page page-current detailPage">
+    <header class="bar bar-nav">
+        <a class="icon icon-left pull-left open-panel" ng-click="back()"></a>
+        <h1 class='title'>详情页</h1>
+    </header>
+    <article class="content article-container">
+        <h1 class="art_title">{{dataList.title}}</h1>
+        <div class="article__header article__header-container">
+            <div class="pgc-bar-top clearfix">
+                <a class="avatar-link" href="#">
+                    <div class="avatar">
+                        <span>
+							<img src="{{dataList.avatar_img}}" class="avatar" alt="">
+						</span>
+                    </div>
+                </a>
+                <div class="subtitle">
+                    <p class="name">
+                        <a href="#" class="screen-name">
+                            <span id="mediaName">{{dataList.mediaName}}</span>
+                            <span>
+								<img src="//s3.pstatp.com/growth/mobile_detail/image/toutiaohao_details@3x_68a75436e76284116102ffc1338955a6.png" alt="">
+							</span>
+                        </a>
+                    </p>
+                    <a href="#" class="time">
+                        <span>{{dataList.time}}</span>
+                    </a>
+                </div>
+            </div>
+            <div class="favor-wrapper">
+                <a href="#" class="download">
+                    <span class="favor-btn">关注</span>
+                </a>
+            </div>
+        </div>
+        <div class="article__content article-content" ng-class="{true:'autoHeight',false:'limitHeight'}[isExpand]">
+            <div ng-bind-html="dataList.article"></div>
+        </div>
+        <div class="banner-bg" ng-hide="isExpand" style="display: block; transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);"></div>
+        <div ng-click="expand()" ng-hide="isExpand" class="unfold-field" style="display: block; transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+            <a href="javascript:void(0)" class="text-link unfold-btn">
+                <p>
+                    <!-- react-text: 22 -->展开全文
+                    <!-- /react-text --><span></span></p>
+            </a>
+        </div>
+    </article>
+</div>
